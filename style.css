@@ -1,0 +1,143 @@
+:root {
+  /* Colors */
+  --clr-background: #22252d;
+  --clr-toggle-background: #292d36;
+  --clr-keypad-background: #292d36;
+  --clr-key-background: #272b33;
+  --clr-key-background--hover: #343943;
+  --clr-toggle: #797b80;
+  --clr-toggle--active: #ffffff;
+  --clr-accent: #26fcd5;
+  --clr-primary: #ee7878;
+  --clr-text: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+}
+
+/* Calculator */
+
+.calculator {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.9375rem;
+  background-color: var(--clr-toggle-background);
+}
+
+.theme-toggle button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--clr-toggle);
+  font-size: 1.25rem;
+  transition: color 120ms ease;
+}
+
+.theme-toggle .active {
+  color: var(--clr-toggle--active);
+}
+
+/* Display */
+
+.display {
+  padding: 2.25rem 2rem;
+  text-align: end;
+}
+
+.previous-operand {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.current-operand {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.previous-operand i,
+.current-operand i {
+  margin-inline: 0.3em;
+  font-size: 0.8em;
+  color: var(--clr-primary);
+}
+
+/* Keypad */
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.125rem;
+  padding: 2.5rem 2rem;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  background-color: var(--clr-keypad-background);
+}
+
+/* Keys */
+
+.key {
+  cursor: pointer;
+  padding-block: 1rem;
+  border: none;
+  border-radius: 0.9375rem;
+  background-color: var(--clr-key-background);
+  color: var(--clr-text);
+  font: inherit;
+  font-size: 1.25rem;
+  transition: background-color 80ms ease;
+}
+
+.key:hover,
+.key:focus,
+.key:active {
+  background-color: var(--clr-key-background--hover);;
+}
+
+.key[data-operator],
+.key[data-equals] {
+  color: var(--clr-primary);
+}
+
+.key[data-all-clear],
+.key[data-plus-minus],
+.key[data-percent] {
+  color: var(--clr-accent);
+}

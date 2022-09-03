@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Scripts -->
     <script
       src="https://kit.fontawesome.com/6f3b5352f0.js"
       crossorigin="anonymous"
@@ -11,10 +20,16 @@
     <title>Calculator</title>
   </head>
   <body>
-    <main>
+    <main class="calculator">
+      <div class="theme-toggle" data-theme-toggle>
+        <button data-light-toggle><i class="fa-regular fa-sun"></i></button>
+        <button class="active" data-dark-toggle><i class="fa-regular fa-moon"></i></button>
+      </div>
       <div class="display">
-        <div class="previous-operand"></div>
-        <div class="current-operand"></div>
+        <div class="previous-operand">
+            308 <i class="fa-solid fa-xmark"></i> 42
+        </div>
+        <div class="current-operand">12,936</div>
       </div>
       <div class="keypad">
         <!-- ROW 1 -->
@@ -33,31 +48,31 @@
         <button class="key" type="button" data-number>8</button>
         <button class="key" type="button" data-number>9</button>
         <button class="key" type="button" data-operator data-multiply>
-            <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark"></i>
         </button>
         <!-- ROW 3 -->
         <button class="key" type="button" data-number>4</button>
         <button class="key" type="button" data-number>5</button>
         <button class="key" type="button" data-number>6</button>
         <button class="key" type="button" data-operator data-subtract>
-            <i class="fa-solid fa-minus"></i>
+          <i class="fa-solid fa-minus"></i>
         </button>
-         <!-- ROW 4 -->
-         <button class="key" type="button" data-number>1</button>
-         <button class="key" type="button" data-number>2</button>
-         <button class="key" type="button" data-number>3</button>
-         <button class="key" type="button" data-operator data-add>
-             <i class="fa-solid fa-plus"></i>
-         </button>
-          <!-- ROW 5 -->
-          <button class="key" type="button" data-delete>
-            <i class="fa-solid fa-rotate-left"></i>
-          </button>
-          <button class="key" type="button" data-number>0</button>
-          <button class="key" type="button" data-number data-decimal>.</button>
-          <button class="key" type="button" data-equals>
-              <i class="fa-solid fa-equals"></i>
-          </button>
+        <!-- ROW 4 -->
+        <button class="key" type="button" data-number>1</button>
+        <button class="key" type="button" data-number>2</button>
+        <button class="key" type="button" data-number>3</button>
+        <button class="key" type="button" data-operator data-add>
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <!-- ROW 5 -->
+        <button class="key" type="button" data-delete>
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button class="key" type="button" data-number>0</button>
+        <button class="key" type="button" data-number data-decimal>.</button>
+        <button class="key" type="button" data-equals>
+          <i class="fa-solid fa-equals"></i>
+        </button>
       </div>
     </main>
   </body>
