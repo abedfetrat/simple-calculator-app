@@ -11,19 +11,20 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- Scripts -->
     <script
       src="https://kit.fontawesome.com/6f3b5352f0.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js" defer></script>
     <title>Calculator</title>
   </head>
-  <body>
+  <body data-theme="dark">
     <main class="calculator">
-      <div class="theme-toggle" data-theme-toggle>
-        <button data-light-toggle><i class="fa-regular fa-sun"></i></button>
-        <button class="active" data-dark-toggle><i class="fa-regular fa-moon"></i></button>
+      <div class="theme-toggle">
+        <button type="button" data-light-theme-toggle><i class="fa-regular fa-sun"></i></button>
+        <button type="button" class="active" data-dark-theme-toggle><i class="fa-regular fa-moon"></i></button>
       </div>
       <div class="display">
         <div class="previous-operand">
