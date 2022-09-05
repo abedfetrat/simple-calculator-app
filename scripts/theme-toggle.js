@@ -1,4 +1,5 @@
 /* ---------------------- Theme Toggling Logic ---------------------- */
+
 const THEME_LIGHT = 'light';
 const THEME_DARK = 'dark';
 

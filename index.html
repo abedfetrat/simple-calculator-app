@@ -17,7 +17,8 @@
       src="https://kit.fontawesome.com/6f3b5352f0.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
+    <script src="./scripts/theme-toggle.js" defer></script>
     <title>Calculator</title>
   </head>
   <body data-theme="light">
@@ -27,10 +28,8 @@
         <button type="button" class="active" data-dark-theme-toggle><i class="fa-regular fa-moon"></i></button>
       </div>
       <div class="display">
-        <div class="previous-operand">
-            308 <i class="fa-solid fa-xmark"></i> 42
-        </div>
-        <div class="current-operand">12,936</div>
+        <div class="previous-operand" data-previous-operand></div>
+        <div class="current-operand" data-current-operand></div>
       </div>
       <div class="keypad">
         <!-- ROW 1 -->
@@ -38,31 +37,31 @@
         <button class="key" type="button" data-plus-minus>
           <i class="fa-solid fa-plus-minus"></i>
         </button>
-        <button class="key" type="button" data-operator data-percent>
+        <button class="key" type="button" data-operator="percent">
           <i class="fa-solid fa-percent"></i>
         </button>
-        <button class="key" type="button" data-operator data-divide>
+        <button class="key" type="button" data-operator="divide">
           <i class="fa-solid fa-divide"></i>
         </button>
         <!-- ROW 2 -->
         <button class="key" type="button" data-number>7</button>
         <button class="key" type="button" data-number>8</button>
         <button class="key" type="button" data-number>9</button>
-        <button class="key" type="button" data-operator data-multiply>
+        <button class="key" type="button" data-operator="multiply">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <!-- ROW 3 -->
         <button class="key" type="button" data-number>4</button>
         <button class="key" type="button" data-number>5</button>
         <button class="key" type="button" data-number>6</button>
-        <button class="key" type="button" data-operator data-subtract>
+        <button class="key" type="button" data-operator="subtract">
           <i class="fa-solid fa-minus"></i>
         </button>
         <!-- ROW 4 -->
         <button class="key" type="button" data-number>1</button>
         <button class="key" type="button" data-number>2</button>
         <button class="key" type="button" data-number>3</button>
-        <button class="key" type="button" data-operator data-add>
+        <button class="key" type="button" data-operator="add">
           <i class="fa-solid fa-plus"></i>
         </button>
         <!-- ROW 5 -->
