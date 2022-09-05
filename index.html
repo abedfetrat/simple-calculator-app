@@ -24,12 +24,18 @@
   <body data-theme="light">
     <main class="calculator">
       <div class="theme-toggle">
-        <button type="button" data-light-theme-toggle><i class="fa-regular fa-sun"></i></button>
-        <button type="button" class="active" data-dark-theme-toggle><i class="fa-regular fa-moon"></i></button>
+        <button type="button" data-light-theme-toggle>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+        <button type="button" class="active" data-dark-theme-toggle>
+          <i class="fa-regular fa-moon"></i>
+        </button>
       </div>
       <div class="display">
-        <div class="previous-operand" data-previous-operand></div>
-        <div class="current-operand" data-current-operand></div>
+        <div class="display-inner">
+          <div class="previous-operand" data-previous-operand></div>
+          <div class="current-operand" data-current-operand></div>
+        </div>
       </div>
       <div class="keypad">
         <!-- ROW 1 -->

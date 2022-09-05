@@ -95,8 +95,19 @@ body {
 /* Display */
 
 .display {
-  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+  padding: 5.75rem 2rem 2.25rem;
+}
+
+.display-inner {
   text-align: end;
+}
+
+.previous-operand, 
+.current-operand {
+  word-wrap: break-word;
 }
 
 .previous-operand {
