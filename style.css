@@ -1,5 +1,18 @@
 :root {
   /* Colors */
+  --clr-background: #ffffff;
+  --clr-toggle-background: #f9f9f9;
+  --clr-keypad-background: #f9f9f9;
+  --clr-key-background: #f7f7f7;
+  --clr-key-background--hover: #eeeeee;
+  --clr-toggle: #dddddd;
+  --clr-toggle--active: #3f434b;
+  --clr-accent: #26fcd5;
+  --clr-primary: #ee7878;
+  --clr-text: #292d36;
+}
+
+[data-theme="dark"] {
   --clr-background: #22252d;
   --clr-toggle-background: #292d36;
   --clr-keypad-background: #292d36;
@@ -10,19 +23,6 @@
   --clr-accent: #26fcd5;
   --clr-primary: #ee7878;
   --clr-text: #ffffff;
-}
-
-[data-theme="light"] {
-    --clr-background: #FFFFFF;
-    --clr-toggle-background: #F9F9F9;
-    --clr-keypad-background: #F9F9F9;
-    --clr-key-background: #F7F7F7;
-    --clr-key-background--hover: #eeeeee;
-    --clr-toggle: #DDDDDD;
-    --clr-toggle--active: #3F434B;
-    --clr-accent: #26fcd5;
-    --clr-primary: #ee7878;
-    --clr-text: #292D36;
 }
 
 *,
@@ -147,7 +147,7 @@ body {
 .key:hover,
 .key:focus,
 .key:active {
-  background-color: var(--clr-key-background--hover);;
+  background-color: var(--clr-key-background--hover);
 }
 
 .key[data-operator],
