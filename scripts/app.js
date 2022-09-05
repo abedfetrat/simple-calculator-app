@@ -23,9 +23,10 @@ class Calculator {
     }
 
     handleNumber(number) {
-        if (number.toString() === '.' && this.currentOperand.includes('.')) return;
+        number = number.toString();
+        if (number === '.' && this.currentOperand.includes('.')) return;
 
-        if (this.currentOperand === '0') {
+        if (number != '.' && this.currentOperand === '0') {
             this.currentOperand = number;
         } else {
             this.currentOperand += number;
@@ -79,6 +80,8 @@ class Calculator {
             default:
                 result = 0;
         }
+        // Fixes dcimal precision erros such as when adding 0.2 + 0.1
+        result = parseFloat(result.toFixed(10));
         this.operation = undefined;
         this.previousOperand = '';
         this.currentOperand = result.toString();
