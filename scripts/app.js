@@ -1,5 +1,17 @@
 import { showToast } from './toast.js';
 
+// Register Service worker for PWA support
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker
+            .register('/serviceWorker.js')
+            .then(res => console.log('service worker registered'))
+            .catch(err => console.log('service worker not registered', err))
+    })
+}
+
+/* ------------------------- APP LOGIC ------------------------- */
+
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement;
