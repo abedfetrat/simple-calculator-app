@@ -4,7 +4,7 @@ import { showToast } from './toast.js';
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
         navigator.serviceWorker
-            .register('./serviceWorker.js')
+            .register('/simple-calculator-app/serviceWorker.js', { scope: '/simple-calculator-app/' })
             .then(res => console.log('service worker registered'))
             .catch(err => console.log('service worker not registered', err))
     })
