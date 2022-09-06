@@ -128,3 +128,66 @@ document.querySelector('[data-plus-minus]').addEventListener('click', () => calc
 document.querySelector('[data-all-clear]').addEventListener('click', () => calculator.clear());
 document.querySelector('[data-delete]').addEventListener('click', () => calculator.delete());
 document.querySelector('[data-equals]').addEventListener('click', () => calculator.equals());
+
+// Respond to keyboard input
+document.addEventListener('keydown', e => {
+    switch (e.key) {
+        case '0':
+            calculator.handleNumber(0);
+            break;
+        case '1':
+            calculator.handleNumber(1);
+            break;
+        case '2':
+            calculator.handleNumber(2);
+            break;
+        case '3':
+            calculator.handleNumber(3);
+            break;
+        case '4':
+            calculator.handleNumber(4);
+            break;
+        case '5':
+            calculator.handleNumber(5);
+            break;
+        case '6':
+            calculator.handleNumber(6);
+            break;
+        case '7':
+            calculator.handleNumber(7);
+            break;
+        case '8':
+            calculator.handleNumber(8);
+            break;
+        case '9':
+            calculator.handleNumber(9);
+            break;
+        case '.':
+            calculator.handleNumber('.');
+            break;
+        case '+':
+            calculator.handleOperator(document.querySelector('[data-operator="add"]'));
+            break;
+        case '-':
+            calculator.handleOperator(document.querySelector('[data-operator="subtract"]'));
+            break;
+        case '*':
+            calculator.handleOperator(document.querySelector('[data-operator="multiply"]'));
+            break;
+        case '/':
+            calculator.handleOperator(document.querySelector('[data-operator="divide"]'));
+            break;
+        case '%':
+            calculator.handleOperator(document.querySelector('[data-operator="percent"]'));
+            break;
+        case 'Escape':
+            calculator.clear();
+            break;
+        case 'Backspace':
+            calculator.delete();
+            break;
+        case 'Enter':
+            calculator.equals();
+            break;
+    }
+});
