@@ -1,3 +1,5 @@
+import { showToast } from './toast.js';
+
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement;
@@ -24,8 +26,22 @@ class Calculator {
 
     handleNumber(number) {
         number = number.toString();
+        // Prevents multiple decimal characters
         if (number === '.' && this.currentOperand.includes('.')) return;
-
+        // Limits number to 15 digits
+        if (this.currentOperand.length === 15) {
+            showToast("Can't enter more than 15 digits");
+            return;
+        }
+        // Limits decimals to 10 digits
+        if (this.currentOperand.includes('.')) {
+            const decimals = this.currentOperand.split('.')[1];
+            if (decimals.length === 10) {
+                showToast("Can't enter more than 10 digits after decimal point");
+                return;
+            }
+        }
+        // Replace inital zero number with input
         if (number != '.' && this.currentOperand === '0') {
             this.currentOperand = number;
         } else {
