@@ -197,7 +197,7 @@ document.addEventListener('keydown', e => {
 const registerServiceWorker = async () => {
     if ('serviceWorker' in navigator) {
         try {
-            await navigator.serviceWorker.register('../sw.js');
+            await navigator.serviceWorker.register('sw.js');
             console.log('Service worker registered!');
         } catch (error) {
             console.warn('Error registering service worker:');
