@@ -191,3 +191,18 @@ document.addEventListener('keydown', e => {
             break;
     }
 });
+
+
+/* Registration of the Service Worker for offline capabilities */
+const registerServiceWorker = async () => {
+    if ('serviceWorker' in navigator) {
+        try {
+            await navigator.serviceWorker.register('../sw.js');
+            console.log('Service worker registered!');
+        } catch (error) {
+            console.warn('Error registering service worker:');
+            console.warn(error);
+        }
+    }
+}
+registerServiceWorker();
