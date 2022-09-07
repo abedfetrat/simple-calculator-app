@@ -1,4 +1,4 @@
-const cacheName = 'calculator_v1';
+const cacheName = 'calculator_v1.1';
 const resources = [
     'assets/fontawesome/css/fontawesome.css',
     'assets/fontawesome/css/regular.css',

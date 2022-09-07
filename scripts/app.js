@@ -99,7 +99,7 @@ class Calculator {
         }
         // Display friendly message if calculation resolves to undefined
         // such as when diving zero by zero
-        if(isNaN(result)) {
+        if (isNaN(result)) {
             showToast('Invalid format used');
             return;
         }
@@ -112,9 +112,25 @@ class Calculator {
         this.updateDisplay();
     }
 
+    getDisplayNumber(number) {
+        const integerDigits = parseFloat(number.split('.')[0]);
+        const decimalDigits = number.split('.')[1];
+        let integerDisplay;
+        if (isNaN(integerDigits)) {
+            integerDisplay = '';
+        } else {
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
+        }
+        if (decimalDigits != null) {
+            return `${integerDisplay}.${decimalDigits}`;
+        } else {
+            return integerDisplay;
+        }
+    }
+
     updateDisplay() {
         this.previousOperandTextElement.innerHTML = `${this.previousOperand} ${this.operation ? this.operation.innerHTML : ''}`;
-        this.currentOperandTextElement.innerHTML = this.currentOperand;
+        this.currentOperandTextElement.innerHTML = this.getDisplayNumber(this.currentOperand);
     }
 }
 
