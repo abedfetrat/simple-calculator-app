@@ -89,6 +89,10 @@ class Calculator {
                 result = a * b;
                 break;
             case 'divide':
+                if (b === 0) {
+                    showToast("Can't divide by zero");
+                    return;
+                }
                 result = a / b;
                 break;
             case 'percent':
@@ -97,13 +101,7 @@ class Calculator {
             default:
                 result = 0;
         }
-        // Display friendly message if calculation resolves to undefined
-        // such as when diving zero by zero
-        if (isNaN(result)) {
-            showToast('Invalid format used');
-            return;
-        }
-
+        
         // Fixes dcimal precision erros such as when adding 0.2 + 0.1
         result = parseFloat(result.toFixed(10));
         this.operation = undefined;
